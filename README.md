@@ -62,7 +62,7 @@ This function attaches a listener to the Puppeteer page's react root for recordi
 - `threshold` <[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)> cutoff for acceptable
   component render time (in ms)
   - default time is 16ms
-- returns: [Nodes[]](https://developer.mozilla.org/en-US/docs/Glossary/array) An array of nodes belonging to each react component that
+- returns: [Node[]](https://developer.mozilla.org/en-US/docs/Glossary/array) An array of nodes belonging to each react component that
   exceeded the given render time threshold
 
 Will report all component render times that exceed the given threshold in ms
@@ -73,7 +73,33 @@ If no threshold is given, the default threshold of 16ms is used (please see [FAQ
 
 ### Using with Puppeteer
 
-TODO: Add example
+```
+const puppeteer = require("puppeteer");
+const reactPinpoint = require('react-pinpoint');
+
+(async () => {
+  const browser = await puppeteer.launch({});
+  const page = await browser.newPage();
+
+  // Pass information to
+  const url = "http://localhost:3000/calculator"
+  const rootId = "#root"
+  await reactPinpoint.record(page, url, rootId)
+
+  // Perform browser actions
+  await page.click("#yeah1");
+  await page.click("#yeah2");
+  await page.click("#yeah3");
+
+
+  // Get all components that took longer than 16ms to render during browser actions
+  const threshold = 16
+  const slowRenders = await reactPinpoint.reportTestResults(page, threshold)
+
+  await browser.close();
+})()
+
+```
 
 ### Using with Cypress
 
