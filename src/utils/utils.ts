@@ -73,7 +73,7 @@ function flattenTree(tree) {
   return arr;
 }
 
-function checkTime(fiber, threshold) {
+function checkTime(fiber: any, threshold: number) {
   return fiber.selfBaseDuration > threshold;
 }
 
