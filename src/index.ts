@@ -10,7 +10,7 @@ async function record(page, url, rootIdString) {
   // Load url and inject code to page
   await page.goto(url);
   await page.addScriptTag({
-    path: path.join(__dirname, 'utils/utils.js'),
+    path: path.join(__dirname, 'utils.js'),
   });
 
   // Start recording changes
@@ -35,4 +35,4 @@ async function reportAll() {
   // Return global state
 }
 
-module.exports = {record, report, reportAll};
+export {record, report, reportAll};

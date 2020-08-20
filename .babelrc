@@ -11,5 +11,5 @@
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
-  "ignore": ["**/__tests__", "\\.test\\.js"]
+  "ignore": ["**/__tests__", "\\.test\\.js", "**/dockerfile-generator", "**/cicd-workflow"]
 }
