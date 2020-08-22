@@ -73,8 +73,8 @@ If no threshold is given, the default threshold of 16ms is used (please see [FAQ
 
 ### Using with Puppeteer
 
-```
-const puppeteer = require("puppeteer");
+```javascript
+const puppeteer = require('puppeteer');
 const reactPinpoint = require('react-pinpoint');
 
 (async () => {
@@ -82,23 +82,21 @@ const reactPinpoint = require('react-pinpoint');
   const page = await browser.newPage();
 
   // Pass information to
-  const url = "http://localhost:3000/calculator"
-  const rootId = "#root"
-  await reactPinpoint.record(page, url, rootId)
+  const url = 'http://localhost:3000/calculator';
+  const rootId = '#root';
+  await reactPinpoint.record(page, url, rootId);
 
   // Perform browser actions
-  await page.click("#yeah1");
-  await page.click("#yeah2");
-  await page.click("#yeah3");
-
+  await page.click('#yeah1');
+  await page.click('#yeah2');
+  await page.click('#yeah3');
 
   // Get all components that took longer than 16ms to render during browser actions
-  const threshold = 16
-  const slowRenders = await reactPinpoint.reportTestResults(page, threshold)
+  const threshold = 16;
+  const slowRenders = await reactPinpoint.reportTestResults(page, threshold);
 
   await browser.close();
-})()
-
+})();
 ```
 
 ### Using with Cypress
@@ -111,7 +109,6 @@ React pinpoint was designed with the goal of regression testing component render
 preconfigured docker containers to assist with using React pinpoint within a CICD as well as with examples for doing so
 
 - [Puppeteer](https://github.com/oslabs-beta/react-pinpoint/tree/dockerfile/src/dockerfile-generator)
-- [Cypress](https://github.com/oslabs-beta/react-pinpoint/tree/dockerfile/src/dockerfile-generator)
 
 ## FAQS
 
