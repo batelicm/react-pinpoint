@@ -1,9 +1,9 @@
 # dockerfile generator
 
-<<<<<<< HEAD:src/dockerfile-generator/README.md
 A script to generate docker files to be used with react-pinpoint and puppeteer js.
-=======
+
 ## Table of Contents
+
 - [Description](##Description)
 - [Prerequisites](##Prerequisites)
 - [Features](##Features)
@@ -14,13 +14,15 @@ A script to generate docker files to be used with react-pinpoint and puppeteer j
   - [Build and run the docker containers](###Build-and-run-the-docker-containers)
 
 ## Description
+
 A script to generate Docker files to be used with react-pinpoint and puppeteer js.
 
 ## Prerequisites
+
 - [Docker](https://www.docker.com/)
 - [react-pinpoint](https://github.com/oslabs-beta/react-pinpoint)
 - [puppeteer](https://pptr.dev/)
->>>>>>> 191a5c1e7702feb5791c59ef8cbf36b8a903d6bd:dockerfile-generator/README.md
+  > > > > > > > 191a5c1e7702feb5791c59ef8cbf36b8a903d6bd:dockerfile-generator/README.md
 
 ## Features
 
@@ -53,19 +55,13 @@ In the test file, replace `http://localhost:3000` with the `app name` and `port`
 ```javascript
 beforeEach(async () => {
   browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
-<<<<<<< HEAD:src/dockerfile-generator/README.md
-
-  page = *await* browser.newPage();
-
-=======
   page = await browser.newPage();
->>>>>>> 191a5c1e7702feb5791c59ef8cbf36b8a903d6bd:dockerfile-generator/README.md
-  const url = "http://webapp:5000";
-  const rootId = "#root";
+  const url = 'http://webapp:5000';
+  const rootId = '#root';
   await reactPinpoint.recordTest(page, url, rootId);
-})
+});
 ```
 
 Full example test file below:
