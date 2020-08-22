@@ -107,7 +107,7 @@ Not yet implemented
 React pinpoint was designed with the goal of regression testing component render times within a CICD, we therefore offer several
 preconfigured docker containers to assist with using React pinpoint within a CICD as well as with examples for doing so
 
-- [Puppeteer](https://github.com/oslabs-beta/react-pinpoint/tree/dockerfile/src/dockerfile-generator)
+- [Puppeteer](https://github.com/oslabs-beta/react-pinpoint/tree/master/dockerfile-generator)
 
 ## FAQS
 
