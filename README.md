@@ -23,7 +23,6 @@ An open-source utility library for measuring React component render times
   - [report](#report--)
 - [Examples](#examples)
   - [Using with Puppeteer](#using-with-puppeteer)
-  - [Using with Cypress](#using-with-cypress)
 - [Docker](#docker)
 - [FAQS](#faqs)
 
